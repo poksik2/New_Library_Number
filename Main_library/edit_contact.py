@@ -1,0 +1,2 @@
+class EditContact:
+    pass

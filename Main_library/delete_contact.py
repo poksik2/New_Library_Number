@@ -1,0 +1,2 @@
+class DeleteContact:
+    pass

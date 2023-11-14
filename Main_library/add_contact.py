@@ -1,0 +1,2 @@
+class AddContact:
+    pass
