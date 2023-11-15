@@ -1,2 +1,0 @@
-class ReadContact:
-    pass

@@ -1,23 +1,41 @@
-
+import sqlite3 as sql
 
 class Contacts:
 
     def __init__(self):
-        self.name = "Вова"
-        self.surname = "Иванов"
-        self.number = 12452323543
-        self.contacts = (f"Name : {self.name} \nSurname : {self.surname} \nNumbers : {self.number}")
+        self.name = input('Name: ')
+        self.surname = input('Surname: ')
+        self.number = input('Number: ')
+        #self.contacts = (f"Name : {self.name} \nSurname : {self.surname} \nNumbers : {self.number}")
+
+
+contact = Contacts()
 
 
 
-class Contact:
-    def one_contact(self):
-        name = 'Joan'
-        surname = 'Carter'
-        numbers = 123123123
-        name_dict = {'Name: ', name}
-        surname_dict = {'Surname: ', surname}
-        numbers_dict = {'Number: ', numbers}
+print(contact.name)
+
+con = sql.connect('test.db')
+with con:
+    cur = con.cursor()
+    #cur.execute("CREATE TABLE IF NOT EXISTS `test` (id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING, surname STRING, phone_number INTEGER)")
+    #cur.execute(f"INSERT INTO `test` (name, surname, phone_number) VALUES ('{contact.name}', '{contact.surname}','{contact.number}')")
+    #con.execute("DELETE FROM 'test' WHERE id = 1")
+    con.commit()
+
+    cur.execute("SELECT * FROM 'test'")
+    data = cur.fetchall()
+    #print (str(data))
+    cur.execute(f"SELECT * FROM 'test' WHERE ((name = 'Bob') AND (surname = 'Valter'))")
+    ns = cur.fetchall()
+    #print(ns)
+
+base = []
+basefull = [(2, "asd",111)]
+
+if basefull != []:
+    print("ok")
+else:
+    print("not")
 
 
-contact = Contact()

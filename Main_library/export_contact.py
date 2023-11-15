@@ -1,3 +1,0 @@
-
-class ExportContact:
-    pass
