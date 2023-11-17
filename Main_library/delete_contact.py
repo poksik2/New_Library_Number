@@ -18,7 +18,7 @@ class DeleteContact:
 
 
 
-start = DeleteContact()
-start = start.delete_contact()
+#start = DeleteContact()
+#start = start.delete_contact()
 
 

@@ -30,7 +30,14 @@ class DataStoreContact:
         con = sql.connect('database.db')
         cur = con.cursor()
         cur.execute("SELECT * FROM `base_for_phonebook`")
-        print(cur.fetchall())
+        all_contact = (cur.fetchall())
+        i = 0
+        while i != len(all_contact):
+            all_liner = (all_contact[i])
+            i +=1
+            print('-------------------------------')
+            print(*all_liner)
+
 
 #data_store = DataStoreContact()
 #data_store.add_to_base()

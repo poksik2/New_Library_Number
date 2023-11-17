@@ -34,5 +34,5 @@ class AddContact:
         self.add_number()
         self.base.add_to_base(self.name, self.surname, self.number)
 
-start = AddContact()
-start.add_to_data()
+#start = AddContact()
+#start.add_to_data()
